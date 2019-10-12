@@ -1,4 +1,4 @@
 questao 3
 a) são necessários 2 ciclos intervalo, não é diferente vei, essa pergunta é a mesma que as outras mano, wtf
 b) eles fazem a instrução ser executada corretamente atráves da utilização dos valores dos registradores com os valores que foram recém calculados ao invés de utilizar os valores lidos originalmente
-c) se uma instrução modifica um registrador e esse mesmo registrador é fonte da instrução seguinte, a instrução seguinte vai pegar o valor "antigo" do registrador e não o valor resultado da instrução anterior, esse problema pode ser evitado a partir da utilização de adiantamentos ou a partir da colocação de operações nop no código em custo do desempenho do pipeline
+c) se uma instrução modifica um registrador e esse mesmo registrador é fonte da instrução seguinte, a instrução seguinte vai pegar o valor "antigo" do registrador e não o valor resultado da instrução anterior, esse problema pode ser evitado a partir da utilização de adiantamentos ou a partir da colocação de operações nop no código a custo do desempenho do pipeline
