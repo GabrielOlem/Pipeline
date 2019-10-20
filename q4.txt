@@ -1,0 +1,79 @@
+b)Versão sem adiantamento:
+
+.data
+A: .word 7, 6, 5, 4, 1, 2
+.text
+start:
+lui a0,0x8002
+nop
+nop
+ori a0, a0, 0x0090
+addi a1, zero,0x6
+xor t0,t0,t0
+
+CW1:
+nop
+nop
+beq t0,a1,EW1
+nop
+addi t1,t0,1
+
+CW2:
+nop
+nop
+beq t1, a1, EW2
+nop
+add t2, t0, t0
+nop
+nop
+add t2, t2, t2
+nop
+nop
+add t2, a0, t2
+add t3, t1, t1
+nop
+nop
+add t3, t3, t3
+nop
+nop
+add t3, a0, t3
+lw t4, 0(t2)
+nop
+lw t5, 0(t3)
+nop
+slt t6, t4, t5
+nop
+nop
+bne t6, zero, IGN
+nop
+nop
+beq t4, t5, IGN
+nop
+sw t5, 0(t2)
+sw t4, 0(t3)
+
+IGN: 
+addi t1, t1, 1
+beq x0, x0, CW2
+nop
+
+EW2: 
+addi t0, t0, 1
+beq x0, x0, CW1
+nop
+
+EW1: 
+beq x0, x0, FIM
+nop
+
+FIM:
+nop 
+jal FIM
+nop
+jal start
+
+
+c)Sem adiantamento = 20/16 = 1,25
+Com adiantamento = 20/12 = 1,66
+
+d)Sim, podemos mudar a ordem das instruções para que dessa forma tiremos quantidade significante de nops.
