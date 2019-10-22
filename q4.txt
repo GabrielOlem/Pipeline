@@ -1,17 +1,42 @@
-b)Vers�o sem adiantamento:
+a)O código é como um bubble sort semelhante ao código em C++ abaixo:
+  #include <iostream>
+  #include <string>
+  using namespace std;
+
+  int main()
+  {
+      int vetor[6] = {7,6,5,4,1,2};
+      for(int j=0; j<6; j++){
+        cout << vetor[j] << ' ';
+      }
+      cout << endl;
+      for(int i=0; i<6; i++){
+        for(int j=i; j<6; j++){
+            if(vetor[i] > vetor[j]){
+                int aux = vetor[i];
+                vetor[i] = vetor[j];
+                vetor[j] = aux;
+                for(int j=0; j<6; j++){
+                    cout << vetor[j] << ' ';
+                }
+                cout << endl;
+            }
+          }
+      }
+  }
+
+b)Versão sem adiantamento:
 
 .data
-A: .word 7, 6, 5, 4, 1, 2
+A: .word 7, 4, 5, 4, 1, 2
 .text
 start:
-lui a0,0x8002
-nop
-nop
-ori a0, a0, 0x0090
+lui a0,0x10000
 addi a1, zero,0x6
 xor t0,t0,t0
 
 CW1:
+nop
 nop
 nop
 beq t0,a1,EW1
@@ -19,6 +44,7 @@ nop
 addi t1,t0,1
 
 CW2:
+nop
 nop
 nop
 beq t1, a1, EW2
@@ -41,11 +67,12 @@ lw t4, 0(t2)
 nop
 lw t5, 0(t3)
 nop
+nop
 slt t6, t4, t5
 nop
 nop
-bne t6, zero, IGN
 nop
+bne t6, zero, IGN
 nop
 beq t4, t5, IGN
 nop
@@ -54,26 +81,28 @@ sw t4, 0(t3)
 
 IGN: 
 addi t1, t1, 1
+nop
 beq x0, x0, CW2
 nop
 
 EW2: 
 addi t0, t0, 1
+nop
 beq x0, x0, CW1
 nop
 
-EW1: 
+EW1:
+nop 
 beq x0, x0, FIM
 nop
 
 FIM:
-nop 
-jal FIM
-nop
+ jal fim
+ nop
 jal start
-
+nop
 
 c)Sem adiantamento = 20/16 = 1,25
 Com adiantamento = 20/12 = 1,66
 
-d)Sim, podemos mudar a ordem das instru��es para que dessa forma tiremos quantidade significante de nops.
+d)Sim, podemos mudar a ordem das instruções para que dessa forma tiremos quantidade significante de nops.
