@@ -1,5 +1,5 @@
-Questão 2-
-código base:
+QuestÃ£o 2-
+cÃ³digo base:
 addi x9,x0,10
 sw x9,0(x0)
 .loop:
@@ -8,100 +8,100 @@ sw x9,0(x0)
 	bne x5,x6,.loop
 	add x7,x5,x6
 a)
-instrução addi x9,x0,10
+instruÃ§Ã£o addi x9,x0,10
 	Sem adiantamento:
-	IF: A instrução é carregada da memória de instrução a partir de PC
+	IF: A instruÃ§Ã£o Ã© carregada da memÃ³ria de instruÃ§Ã£o a partir de PC
 	ID: Carrega o registrador x0 do banco de reg e estende o imediato
-	EX: A operação de soma é realizada na ula.
-	MEM: Não acontece nada pois a instrução de addi não utiliza memória
+	EX: A operaÃ§Ã£o de soma Ã© realizada na ula.
+	MEM: NÃ£o acontece nada pois a instruÃ§Ã£o de addi nÃ£o utiliza memÃ³ria
 	WB: Ocorre a escrita no registrador x9
 	Com adiantamento:
-	IF: A instrução é carregada da memória de instrução a partir de PC
+	IF: A instruÃ§Ã£o Ã© carregada da memÃ³ria de instruÃ§Ã£o a partir de PC
 	ID: Carrega o registrador x0 do banco de reg e estende o imediato
-	EX: Como não há dependência de dados, a operação de soma do registrador x0 com o imediato é realizada na ula.
-	MEM: Não acontece nada pois a instrução de addi não utiliza memória
+	EX: Como nÃ£o hÃ¡ dependÃªncia de dados, a operaÃ§Ã£o de soma do registrador x0 com o imediato Ã© realizada na ula.
+	MEM: NÃ£o acontece nada pois a instruÃ§Ã£o de addi nÃ£o utiliza memÃ³ria
 	WB: Ocorre a escrita no registrador x9
 
-instrução sw x9,0(x0)
+instruÃ§Ã£o sw x9,0(x0)
 	Sem adiantamento:
 
-	IF: A instrução é carregada da memória de instrução a partir de PC
+	IF: A instruÃ§Ã£o Ã© carregada da memÃ³ria de instruÃ§Ã£o a partir de PC
 	ID: Carrega o registrador x0 e o x9 do banco de reg e estende o imediato
-	EX: A operação de soma do x0 com o imediato é realizada na ula.
-	MEM: É feita a escrita do registrador x9, nesse caso 0, no endereço obtido na soma.
-	WB: Não acontece nada pois a instrução de sw não escreve em registrador
+	EX: A operaÃ§Ã£o de soma do x0 com o imediato Ã© realizada na ula.
+	MEM: Ã‰ feita a escrita do registrador x9, nesse caso 0, no endereÃ§o obtido na soma.
+	WB: NÃ£o acontece nada pois a instruÃ§Ã£o de sw nÃ£o escreve em registrador
 
 	Com adiantamento:
 
-	IF: A instrução é carregada da memória de instrução a partir de PC
+	IF: A instruÃ§Ã£o Ã© carregada da memÃ³ria de instruÃ§Ã£o a partir de PC
 	ID: Carrega o registrador x0 e o x9 do banco de reg e estende o imediato
-	EX: A operação de soma do x0 com o imediato é realizada na ula e o valor de x9 a ser utilizado é o valor vindo do estágio de EX do pipeline, nesse caso 10, pois há dependência de dados.
-	MEM: É feita a escrita do registrador x9, nesse caso 10, no endereço obtido na soma.
-	WB: Não acontece nada pois a instrução de sw não escreve em registrador
+	EX: A operaÃ§Ã£o de soma do x0 com o imediato Ã© realizada na ula e o valor de x9 a ser utilizado Ã© o valor vindo do estÃ¡gio de EX do pipeline, nesse caso 10, pois hÃ¡ dependÃªncia de dados.
+	MEM: Ã‰ feita a escrita do registrador x9, nesse caso 10, no endereÃ§o obtido na soma.
+	WB: NÃ£o acontece nada pois a instruÃ§Ã£o de sw nÃ£o escreve em registrador
 
-instrução lw x6,0(x0)
+instruÃ§Ã£o lw x6,0(x0)
 	Sem adiantamento:
 
-	IF: A instrução é carregada da memória de instrução a partir de PC
+	IF: A instruÃ§Ã£o Ã© carregada da memÃ³ria de instruÃ§Ã£o a partir de PC
 	ID: Carrega o registrador x0 e estende o imediato
-	EX: A operação de soma do x0 com o imediato é realizada na ula.
-	MEM: É feita a leitura da memória a partir do endereço obtido na soma.
-	WB: Ocorre a escrita do valor lido da memória, nesse caso 0, no registrador x6
+	EX: A operaÃ§Ã£o de soma do x0 com o imediato Ã© realizada na ula.
+	MEM: Ã‰ feita a leitura da memÃ³ria a partir do endereÃ§o obtido na soma.
+	WB: Ocorre a escrita do valor lido da memÃ³ria, nesse caso 0, no registrador x6
 
 	Com adiantamento:
 
-	IF: A instrução é carregada da memória de instrução a partir de PC
+	IF: A instruÃ§Ã£o Ã© carregada da memÃ³ria de instruÃ§Ã£o a partir de PC
 	ID: Carrega o registrador x0 e estende o imediato
-	EX: A operação de soma do x0 com o imediato é realizada na ula.
-	MEM: É feita a leitura da memória a partir do endereço obtido na soma.
-	WB: Ocorre a escrita do valor lido da memória, nesse caso 10, no registrador x6
+	EX: A operaÃ§Ã£o de soma do x0 com o imediato Ã© realizada na ula.
+	MEM: Ã‰ feita a leitura da memÃ³ria a partir do endereÃ§o obtido na soma.
+	WB: Ocorre a escrita do valor lido da memÃ³ria, nesse caso 10, no registrador x6
 
-instrução addi x7,x0,12
+instruÃ§Ã£o addi x7,x0,12
 	Sem adiantamento:
 
-	IF: A instrução é carregada da memória de instrução a partir de PC
+	IF: A instruÃ§Ã£o Ã© carregada da memÃ³ria de instruÃ§Ã£o a partir de PC
 	ID: Carrega o registrador x0 do banco de reg e estende o imediato
-	EX: A operação de soma é realizada na ula.
-	MEM: Não acontece nada pois a instrução de addi não utiliza memória
+	EX: A operaÃ§Ã£o de soma Ã© realizada na ula.
+	MEM: NÃ£o acontece nada pois a instruÃ§Ã£o de addi nÃ£o utiliza memÃ³ria
 	WB: Ocorre a escrita no registrador x7
 
 	Com adiantamento:
 
-	IF: A instrução é carregada da memória de instrução a partir de PC
+	IF: A instruÃ§Ã£o Ã© carregada da memÃ³ria de instruÃ§Ã£o a partir de PC
 	ID: Carrega o registrador x0 do banco de reg e estende o imediato
-	EX: Como não há dependência de dados, a operação de soma do registrador x0 com o imediato é realizada na ula.
-	MEM: Não acontece nada pois a instrução de addi não utiliza memória
+	EX: Como nÃ£o hÃ¡ dependÃªncia de dados, a operaÃ§Ã£o de soma do registrador x0 com o imediato Ã© realizada na ula.
+	MEM: NÃ£o acontece nada pois a instruÃ§Ã£o de addi nÃ£o utiliza memÃ³ria
 	WB: Ocorre a escrita no registrador x7
 
-instrução bne x8,x7,.loop
+instruÃ§Ã£o bne x8,x7,.loop
 	Sem adiantamento:
 
-	IF: A instrução é carregada da memória de instrução a partir de PC
-	ID: Compara os valores nos registradores x7 e x8, 0 e 0, respectivamente e como são iguais não realiza o branch
-	EX: Não acontece nada pois a instrução de bne ja foi realizada
-	MEM: Não acontece nada pois a instrução de bne ja foi realizada
-	WB: Não acontece nada pois a instrução de bne ja foi realizada
+	IF: A instruÃ§Ã£o Ã© carregada da memÃ³ria de instruÃ§Ã£o a partir de PC
+	ID: Compara os valores nos registradores x7 e x8, 0 e 0, respectivamente e como sÃ£o iguais nÃ£o realiza o branch
+	EX: NÃ£o acontece nada pois a instruÃ§Ã£o de bne ja foi realizada
+	MEM: NÃ£o acontece nada pois a instruÃ§Ã£o de bne ja foi realizada
+	WB: NÃ£o acontece nada pois a instruÃ§Ã£o de bne ja foi realizada
 
 	Com adiantamento:
-	IF: A instrução é carregada da memória de instrução a partir de PC
-	ID: Como existem dependências com o x6 e x7, duas bolhas são inseridas para aguardar a escrita no registrador x6 e x7, após a escrita, a comparação é feita e como 10 é diferente de 12, o desvio é feito e um flush é dado em IF/ID
-	EX: Não acontece nada pois a instrução de bne ja foi realizada
-	MEM: Não acontece nada pois a instrução de bne ja foi realizada
-	WB: Não acontece nada pois a instrução de bne ja foi realizada
+	IF: A instruÃ§Ã£o Ã© carregada da memÃ³ria de instruÃ§Ã£o a partir de PC
+	ID: Como existem dependÃªncias com o x6 e x7, duas bolhas sÃ£o inseridas para aguardar a escrita no registrador x6 e x7, apÃ³s a escrita, a comparaÃ§Ã£o Ã© feita e como 10 Ã© diferente de 12, o desvio Ã© feito e um flush Ã© dado em IF/ID
+	EX: NÃ£o acontece nada pois a instruÃ§Ã£o de bne ja foi realizada
+	MEM: NÃ£o acontece nada pois a instruÃ§Ã£o de bne ja foi realizada
+	WB: NÃ£o acontece nada pois a instruÃ§Ã£o de bne ja foi realizada
 
-instrução addi x8,x7,x5
+instruÃ§Ã£o addi x8,x7,x5
 	Sem adiantamento:
 
-	IF: A instrução é carregada da memória de instrução a partir de PC
+	IF: A instruÃ§Ã£o Ã© carregada da memÃ³ria de instruÃ§Ã£o a partir de PC
 	ID: Carrega os registradores x7 e x6
-	EX: A operação de soma é realizada na ula entre o registrador x7 e x6, 0 e 0, respectivamente.
-	MEM: Não acontece nada pois a instrução de add não utiliza memória
+	EX: A operaÃ§Ã£o de soma Ã© realizada na ula entre o registrador x7 e x6, 0 e 0, respectivamente.
+	MEM: NÃ£o acontece nada pois a instruÃ§Ã£o de add nÃ£o utiliza memÃ³ria
 	WB: Ocorre a escrita no registrador x8
 
 	Com adiantamento:
 
-	IF: A instrução é carregada da memória de instrução a partir de PC
-	ID: Não é executado pois a instrução bne realiza um flush no addi
+	IF: A instruÃ§Ã£o Ã© carregada da memÃ³ria de instruÃ§Ã£o a partir de PC
+	ID: NÃ£o Ã© executado pois a instruÃ§Ã£o bne realiza um flush no addi
 
-b)são necessários 2 ciclos para que uma nova instrução possa utilizar o valor escrito no registrador da instrução atual, isto é se uma instrução escreve num registrador e esse mesmo registrador é lido por uma outra instrução, são necessários 2 bolhas entre a primeira e a segunda instrução no pipeline, para que quando a primeira instrução estiver no wb, a segunda estar no id
-c)Sim, todos os estágios do pipeline são utilizados por ao menos uma instrução do código fornecido
+b)sÃ£o necessÃ¡rios 2 ciclos para que uma nova instruÃ§Ã£o possa utilizar o valor escrito no registrador da instruÃ§Ã£o atual, isto Ã© se uma instruÃ§Ã£o escreve num registrador e esse mesmo registrador Ã© lido por uma outra instruÃ§Ã£o, sÃ£o necessÃ¡rios 2 bolhas entre a primeira e a segunda instruÃ§Ã£o no pipeline, para que quando a primeira instruÃ§Ã£o estiver no wb, a segunda estar no id
+c)Sim, todos os estÃ¡gios do pipeline sÃ£o utilizados por ao menos uma instruÃ§Ã£o do cÃ³digo fornecido, no caso a instruÃ§Ã£o lw utiliza todos os estados do pipeline
