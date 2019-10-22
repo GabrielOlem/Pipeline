@@ -25,7 +25,10 @@ a)O código é como um bubble sort semelhante ao código em C++ abaixo:
       }
   }
 
-b)Versão sem adiantamento:
+b)
+Obs: O valor de memória da label A foi mudado pois o valor original estava indo para o trecho de memória errado.
+Versão com adiantamento é o próprio código disponibilizado.
+Versão sem adiantamento:
 
 .data
 A: .word 7, 4, 5, 4, 1, 2
@@ -102,7 +105,7 @@ FIM:
 jal start
 nop
 
-c)Sem adiantamento = 20/16 = 1,25
-Com adiantamento = 20/12 = 1,66
+c)Sem adiantamento = 20/7 = 2,86 CPI, não foram contabilizados os nops.
+Com adiantamento = 20/12 = 1,67 CPI
 
-d)Sim, podemos mudar a ordem das instruções para que dessa forma tiremos quantidade significante de nops.
+d)Sim, podemos mudar a ordem das instruções para que dessa forma tiremos quantidade significante de nop's.
