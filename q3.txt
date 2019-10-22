@@ -1,4 +1,6 @@
 questao 3
-a) s„o necess·rios 2 ciclos intervalo, n„o È diferente vei, essa pergunta È a mesma que as outras mano, wtf
-b) eles fazem a instruÁ„o ser executada corretamente atr·ves da utilizaÁ„o dos valores dos registradores com os valores que foram recÈm calculados ao invÈs de utilizar os valores lidos originalmente
-c) se uma instruÁ„o modifica um registrador e esse mesmo registrador È fonte da instruÁ„o seguinte, a instruÁ„o seguinte vai pegar o valor "antigo" do registrador e n„o o valor resultado da instruÁ„o anterior, esse problema pode ser evitado a partir da utilizaÁ„o de adiantamentos ou a partir da colocaÁ„o de operaÁıes nop no cÛdigo a custo do desempenho do pipeline
+a) Com adiantamento: N√£o s√£o necess√°rios nenhum ciclo de intervalo exceto o bne pois nos outros ocorre adiantamento de dados.
+Sem adiantamento: S√£o necess√°rios 2 ciclos pois enquanto uma instru√ß√£o est√° no wb a outra que est√° no ex pode utilizar o valor, isto √© 2 ciclos de diferen√ßa ou 2 nop's. 
+Sim, O valor encontrado foi diferente pois no caso de adiantamento n√£o pegamos o valor do banco e sim o adiantado, logo para pegarmos o valor direto do banco s√£o necess√°rios 2 ciclos sem adiantamento e 0 ciclos para com adiantamento exceto o bne que s√£o dados 2 stalls.
+b) eles fazem a instru√ß√£o ser executada corretamente atr√°ves da utiliza√ß√£o dos valores dos registradores com os valores que foram rec√©m calculados ao inv√©s de utilizar os valores lidos originalmente
+c) se uma instru√ß√£o modifica um registrador e esse mesmo registrador √© fonte da instru√ß√£o seguinte, a instru√ß√£o seguinte vai pegar o valor "antigo" do registrador e n√£o o valor resultado da instru√ß√£o anterior, esse problema pode ser evitado a partir da utiliza√ß√£o de adiantamentos ou a partir da coloca√ß√£o de opera√ß√µes nop no c√≥digo a custo do desempenho do pipeline
