@@ -103,5 +103,5 @@ instrução addi x8,x7,x5
 	IF: A instrução é carregada da memória de instrução a partir de PC
 	ID: Não é executado pois a instrução bne realiza um flush no addi
 
-b)são necessários 2 ciclos para que uma nova instrução possa utilizar o valor escrito no registrador da instrução atual, isto é se uma instrução escreve num registrador e esse mesmo registrador é lido por uma outra instrução, são necessários 2 bolhas entre a primeira e a segunda instrução no pipeline, para que quando a primeira instrução estiver no wb, a segunda estar no id
+b)são necessários 5 ciclos pois o valor só é escrito no registrador no writeBack que ocorre no quinto ciclo de execução daquela instrução.
 c)Sim, todos os estágios do pipeline são utilizados por ao menos uma instrução do código fornecido, no caso a instrução lw utiliza todos os estados do pipeline
