@@ -1,6 +1,6 @@
 questao 3
 a) Com adiantamento: Não são necessários nenhum ciclo de intervalo exceto o bne pois nos outros ocorre adiantamento de dados.
-Sem adiantamento: São necessários 2 ciclos pois enquanto uma instrução está no wb a outra que está no ex pode utilizar o valor, isto é 2 ciclos de diferença ou 2 nop's. 
+Sem adiantamento: São necessários 2 ciclos pois enquanto uma instrução está no wb a outra que está no ex pode utilizar o valor, isto é 2 ciclos de diferença ou 2 nop's, exceto a função bne que são necessários 3 nops, dois para esperar os dados serem escritos e um para que a operação de comparação seja executada.
 Sim, O valor encontrado foi diferente pois no caso de adiantamento não pegamos o valor do banco e sim o adiantado, logo para pegarmos o valor direto do banco são necessários 2 ciclos de intervalo sem adiantamento e 0 ciclos para com adiantamento exceto o bne que são dados 2 stalls.
 b) eles fazem a instrução ser executada corretamente atráves da utilização dos valores dos registradores com os valores que foram recém calculados ao invés de utilizar os valores lidos originalmente
 c) se uma instrução modifica um registrador e esse mesmo registrador é fonte da instrução seguinte, a instrução seguinte vai pegar o valor "antigo" do registrador e não o valor resultado da instrução anterior, esse problema pode ser evitado a partir da utilização de adiantamentos ou a partir da colocação de operações nop no código a custo do desempenho do pipeline
