@@ -1,0 +1,260 @@
+5)
+#Quando mudar a string1, é necessário a mudança do código na linha 129, no lugar do valor original coloque ceil(string1.size/4) + 1, isso é necessário pois o la não funciona
+.data:
+    string1: .asciz "QZ"
+	 byte: .byte 0
+    string2: .asciz "QZ"
+    byte1: .byte 0
+
+.text:
+	lui x31 65536                    #carregamos o endereço da nossa string1
+	add x2 x0 x0
+	lui x30 65536
+	.loop:
+		lb x3 0(x31)
+		addi x31 x31 1
+		nop
+		addi x10 x3 -65
+		beq x3 x0 .sai
+		nop
+		addi x10 x3 -66
+		beq x10 x0 .grupo1
+		nop
+		addi x10 x3 -67
+		beq x10 x0 .grupo3
+		nop
+		addi x10 x3 -68
+		beq x10 x0 .grupo3
+		nop
+		addi x10 x3 -69
+		beq x10 x0 .grupo2
+		nop
+		addi x10 x3 -70
+		beq x10 x0 .grupo1
+		nop
+		addi x10 x3 -71
+		beq x10 x0 .grupo4
+		nop
+		addi x10 x3 -72
+		beq x10 x0 .grupo2
+		nop
+		addi x10 x3 -73
+		beq x10 x0 .grupo4
+		nop
+		addi x10 x3 -74
+		beq x10 x0 .grupo1
+		nop
+		addi x10 x3 -75
+		beq x10 x0 .grupo6
+		nop
+		addi x10 x3 -76
+		beq x10 x0 .grupo5
+		nop
+		addi x10 x3 -77
+		beq x10 x0 .grupo6
+		nop
+		addi x10 x3 -78
+		beq x10 x0 .grupo3
+		nop
+		addi x10 x3 -79
+		beq x10 x0 .grupo1
+		nop
+		addi x10 x3 -80
+		beq x10 x0 .grupo1
+		nop
+		addi x10 x3 -81
+		beq x10 x0 .grupo3
+		nop
+		addi x10 x3 -82
+		beq x10 x0 .grupo7
+		nop
+		addi x10 x3 -83
+		beq x10 x0 .grupo1
+		nop
+		addi x10 x3 -84
+		beq x10 x0 .grupo1
+		nop
+		addi x10 x3 -85
+		beq x10 x0 .grupo2
+		nop
+		addi x10 x3 -86
+		beq x10 x0 .grupo1
+		nop
+		addi x10 x3 -87
+		beq x10 x0 .grupo4
+		nop
+		addi x10 x3 -88
+		beq x10 x0 .grupo4
+		nop
+		addi x10 x3 -89
+		beq x10 x0 .grupo6
+		nop
+		addi x10 x3 -90
+		beq x10 x0 .grupo4
+		nop
+        nop
+		beq x10 x0 .grupo7
+		nop
+		jal .loop
+		nop
+		.grupo1:
+			addi x2 x2 1
+			jal .loop
+			nop
+		.grupo2:
+			addi x2 x2 2
+			jal .loop
+			nop
+		.grupo3:
+			addi x2 x2 3
+			jal .loop
+			nop
+		.grupo4:
+			addi x2 x2 4
+			jal .loop
+			nop
+		.grupo5:
+			addi x2 x2 5
+			jal .loop
+			nop
+		.grupo6:
+			addi x2 x2 8
+			jal .loop
+			nop
+		.grupo7:
+			addi x2 x2 10
+			jal .loop
+			nop
+	.sai:
+	addi x30 x30 8 
+	nop
+	nop
+	.loop1:
+		lb x3 0(x30)
+		addi x30 x30 1
+		nop
+		addi x10 x3 -65
+		beq x3 x0 .sai1
+        nop
+		addi x10 x3 -66
+		beq x10 x0 .grupo11
+		nop
+		addi x10 x3 -67
+		beq x10 x0 .grupo31
+		nop
+		addi x10 x3 -68
+		beq x10 x0 .grupo31
+		nop
+		addi x10 x3 -69
+		beq x10 x0 .grupo21
+		nop
+		addi x10 x3 -70
+		beq x10 x0 .grupo11
+		nop
+		addi x10 x3 -71
+		beq x10 x0 .grupo41
+		nop
+		addi x10 x3 -72
+		beq x10 x0 .grupo21
+		nop
+		addi x10 x3 -73
+		beq x10 x0 .grupo41
+		nop
+		addi x10 x3 -74
+		beq x10 x0 .grupo11
+		nop
+		addi x10 x3 -75
+		beq x10 x0 .grupo61
+		nop
+		addi x10 x3 -76
+		beq x10 x0 .grupo51
+		nop
+		addi x10 x3 -77
+		beq x10 x0 .grupo61
+		nop
+		addi x10 x3 -78
+		beq x10 x0 .grupo31
+		nop
+		addi x10 x3 -79
+		beq x10 x0 .grupo11
+		nop
+		addi x10 x3 -80
+		beq x10 x0 .grupo11
+		nop
+		addi x10 x3 -81
+		beq x10 x0 .grupo31
+		nop
+		addi x10 x3 -82
+		beq x10 x0 .grupo71
+		nop
+		addi x10 x3 -83
+		beq x10 x0 .grupo11
+		nop
+		addi x10 x3 -84
+		beq x10 x0 .grupo11
+		nop
+		addi x10 x3 -85
+		beq x10 x0 .grupo21
+		nop
+		addi x10 x3 -86
+		beq x10 x0 .grupo11
+		nop
+		addi x10 x3 -87
+		beq x10 x0 .grupo41
+		nop
+		addi x10 x3 -88
+		beq x10 x0 .grupo41
+		nop
+		addi x10 x3 -89
+		beq x10 x0 .grupo61
+		nop
+		addi x10 x3 -90
+		beq x10 x0 .grupo41
+        nop
+        nop
+		beq x10 x0 .grupo71
+		nop
+		jal .loop1
+		nop
+		.grupo11:
+			addi x6 x6 1
+			jal .loop1
+			nop
+		.grupo21:
+			addi x6 x6 2
+			jal .loop1
+			nop
+		.grupo31:
+			addi x6 x6 3
+			jal .loop1
+			nop
+		.grupo41:
+			addi x6 x6 4
+			jal .loop1
+			nop
+		.grupo51:
+			addi x6 x6 5
+			jal .loop1
+			nop
+		.grupo61:
+			addi x6 x6 8
+			jal .loop1
+			nop
+		.grupo71:
+			addi x6 x6 10
+			jal .loop1
+			nop
+	.sai1:
+    beq x2 x6 igual
+    nop
+    blt x6 x2 menor
+    nop
+    addi x7 x0 66
+    jal .exit
+    nop
+    menor:
+        addi x7 x0 65
+        jal .exit
+    igual:
+        addi x7 x0 70
+    .exit:
